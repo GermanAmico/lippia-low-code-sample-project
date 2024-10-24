@@ -4,11 +4,12 @@ Feature: Project
 
   @GetAllProjects
   Scenario: traer todos los projectos
-    Given endpoint /v1/workspaces/{{idworkspace}}/projects
+    Given call Workspace.feature@InfoWorkspace
+    And endpoint /v1/workspaces/{{idworkspace}}/projects
     And header x-api-key = NWVlMTMzMzUtMTZlNS00ZDg0LWEzYTMtNTQyN2QyMTA4NTlj
     When execute method GET
     Then the status code should be 200
-    And response should be $.[1].name = workspace1
+    And response should be $.[1].name = proyecto
     * define idproject = $.[1].id
 
   @CreateProyecto
