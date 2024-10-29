@@ -9,7 +9,7 @@ Feature: Project
     And header x-api-key = NWVlMTMzMzUtMTZlNS00ZDg0LWEzYTMtNTQyN2QyMTA4NTlj
     When execute method GET
     Then the status code should be 200
-    And response should be $.[1].name = proyecto
+    And response should be $.[1].name = ProjectoA
     * define idproject = $.[1].id
 
   @CreateProyecto
