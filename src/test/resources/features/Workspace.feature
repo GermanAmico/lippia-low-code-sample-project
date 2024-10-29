@@ -24,6 +24,7 @@ Feature: Workspace
   Scenario: Crear workspace
     Given endpoint /v1/workspaces
     And header Content-Type = application/json
+    And header x-api-key = NWVlMTMzMzUtMTZlNS00ZDg0LWEzYTMtNTQyN2QyMTA4NTlj
     And body jsons/bodies/AddWorkspace.json
     When execute method POST
     And the status code should be 201
@@ -34,16 +35,20 @@ Feature: Workspace
     Given call Workspace.feature@AddWorkspace
     And endpoint /v1/workspaces/{{idworkspace}}/clients
     And header Content-Type = application/json
+    And header x-api-key = NWVlMTMzMzUtMTZlNS00ZDg0LWEzYTMtNTQyN2QyMTA4NTlj
     And body jsons/bodies/AddClient.json
     When execute method POST
-    And the status code should be 201
+    Then the status code should be 201
 
   @FindClientsOnWorkspace
     Scenario: Encontrar clientes en un workspace
-    Given call Workspace.feature@InfoWorksspace
+    Given call Workspace.feature@InfoWorkspace
     And endpoint /v1/workspaces/{{idworkspace}}/clients
+    And header x-api-key = NWVlMTMzMzUtMTZlNS00ZDg0LWEzYTMtNTQyN2QyMTA4NTlj
     When execute method GET
-    And the status code should be 200
+    Then the status code should be 200
+
+
 
 
 
