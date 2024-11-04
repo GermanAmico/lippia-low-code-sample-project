@@ -13,7 +13,7 @@ Feature: TimeEntry
     * define timeEntryId = $.[0].id
     * define projectId = $.[0].projectId
 
-  @AddTimeEntry @Do
+  @AddTimeEntry
   Scenario: Se agrega una nueva entrada de tiempo
     Given call Workspace.feature@InfoWorkspace
     And call Project.feature@GetAllProjects
@@ -25,7 +25,7 @@ Feature: TimeEntry
     * define timeEntryId = $.id
 
 
-  @UpdateTimeEntry @Do
+  @UpdateTimeEntry
   Scenario: Se modifica algun campo de algun registro de hora
     Given call Time.feature@TimeEntriesForUser
     And endpoint /v1/workspaces/{{idworkspace}}/time-entries/{{timeEntryId}}
@@ -36,7 +36,7 @@ Feature: TimeEntry
     And response should be $.description = Descripcion modificada.
 
 
-  @DeleteTimeEntry @Do
+  @DeleteTimeEntry
   Scenario: Se elimina una entrada de tiempo cargada
     Given call Time.feature@TimeEntriesForUser
     And endpoint /v1/workspaces/{{idworkspace}}/time-entries/{{timeEntryId}}
