@@ -1,6 +1,8 @@
 {
 
   "description": "Descripcion modificada.",
+  "end": "2024-11-20T18:00:00Z",
+  "projectId": "{{projectId}}",
   "start": "2024-11-20T15:00:00Z"
 
 

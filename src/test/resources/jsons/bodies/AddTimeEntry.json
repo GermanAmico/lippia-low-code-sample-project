@@ -1,6 +1,7 @@
 {
   "description": "Descripcion de prueba1",
   "end": "2024-11-20T16:00:00Z",
-  "projectId": "671d4f66c9a7b24e6b0061df",
+  "projectId": "{{projectId}}",
   "start": "2024-11-20T15:00:00Z"
 }
+
